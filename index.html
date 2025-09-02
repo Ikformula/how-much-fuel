@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Fuel Consumption Calculator</title>
+  <link href="bootswatch-5.3.7-vapor-bootstrap.min.css" rel="stylesheet">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0d1b2a">
+  <style>
+      .results {
+          margin-top: 0.5rem;
+          padding: 1rem;
+          border-radius: 8px;
+          background: #0d1b2a;
+      }
+
+      .result-item {
+          margin-bottom: 0.5rem;
+          font-size: 1.1rem;
+      }
+  </style>
+</head>
+<body>
+  <div class="container-fluid">
+    <h1>Fuel Cost Calculator</h1>
+
+    <div class="row">
+    <div class="col">
+      <div class="form-group">
+        <label for="distanceKm">Distance (km)</label>
+        <input type="number" id="distanceKm" placeholder="Enter kilometers" class="form-control">
+      </div>
+      
+      <div class="form-group">
+        <label for="distanceMiles">Distance (miles)</label>
+        <input type="number" id="distanceMiles" placeholder="Enter miles" class="form-control">
+      </div>
+      
+      <div class="form-group">
+        <label for="priceLiter">Price per Liter</label>
+        <input type="number" id="priceLiter" placeholder="Enter per liter" class="form-control">
+      </div>
+      
+      <div class="form-group">
+        <label for="priceGallon">Price per Gallon</label>
+        <input type="number" id="priceGallon" placeholder="Enter per gallon" class="form-control">
+      </div>
+      
+      <div class="form-group">
+        <label for="currency">Currency</label>
+        <input type="text" id="currency" value="₦" class="form-control">
+      </div>
+      
+      <div class="form-group">
+        <!-- 🔄 changed label + placeholder -->
+        <label for="consumptionLkm">Consumption (L/km)</label>
+        <input type="number" id="consumptionLkm" placeholder="Liters per km" step="0.001" class="form-control">
+      </div>
+      
+      <div class="form-group">
+        <label for="consumptionMpg">Consumption (mpg)</label>
+        <input type="number" id="consumptionMpg" placeholder="Miles per gallon" class="form-control">
+      </div>
+    </div>
+    </div>
+    
+    <div class="results" id="results">
+      <div class="result-item">Fuel Needed: <span id="fuelNeeded">-</span></div>
+      <div class="result-item">Total Cost: <span id="totalCost">-</span></div>
+    </div>
+
+    <div class="actions">
+      <button id="resetBtn" class="btn btn-primary">Reset All</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+  <script>
+    // Register service worker
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("sw.js")
+         .then(reg => console.log("✅ Service Worker registered:", reg.scope))
+         .catch(err => console.error("❌ Service Worker failed:", err));
+    }
+  </script>
+
+</body>
+</html>
