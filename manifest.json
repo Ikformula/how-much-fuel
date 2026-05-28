@@ -1,10 +1,10 @@
 {
   "name": "Fuel Consumption Calculator",
   "short_name": "FuelCalc",
-  "start_url": ".",
+  "start_url": "https://fuel-usage.netlify.app",
   "display": "standalone",
-  "background_color": "#0d1b2a",
-  "theme_color": "#0d1b2a",
+  "background_color": "#2c0d6d",
+  "theme_color": "#0d3aff",
   "icons": [
     {
       "src": "icons/icon-192.png",
@@ -16,5 +16,15 @@
       "sizes": "512x512",
       "type": "image/png"
     }
+  ],
+  "id": "fuel-usage-calc",
+  "description": "App to calculate how much fuel will be used by a car of a particular fuel consumption rating. It accepts inputs in mpg, km/l, l/km, price per liter and per gallon, distance to travel in km and miles.\nChanging the value in one input can change the values in the other related inputs.",
+  "orientation": "any",
+  "categories": [
+    "finance",
+    "navigation",
+    "productivity",
+    "travel",
+    "utilities"
   ]
 }
